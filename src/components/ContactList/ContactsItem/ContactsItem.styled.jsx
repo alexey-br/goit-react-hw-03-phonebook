@@ -15,6 +15,18 @@ export const ContactIcon = styled(IoIosContact)`
   color: ${({ theme }) => theme.colors.accent};
 `;
 
+export const ContactName = styled.span`
+  display: inline-block;
+  min-width: 150px;
+  margin-left: ${({ theme }) => theme.space[2]}px;
+`;
+
+export const ContactNumber = styled.span`
+  display: inline-block;
+  min-width: 150px;
+  margin-left: ${({ theme }) => theme.space[2]}px;
+`;
+
 export const DeleteBtn = styled.button`
   font-family: inherit;
   border-radius: ${({ theme }) => theme.radii.normal};

@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import Box from 'components/Box';
+import Box from 'components/reusableComponents/Box';
 import ContactsItem from './ContactsItem';
 
 export default function ContactList({ contacts, onDeleteContact }) {

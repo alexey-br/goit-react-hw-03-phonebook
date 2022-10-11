@@ -1,5 +1,10 @@
-import Box from 'components/Box';
-import { Contact, ContactIcon, DeleteBtn } from './ContactsItem.styled';
+import {
+  Contact,
+  ContactIcon,
+  ContactName,
+  ContactNumber,
+  DeleteBtn,
+} from './ContactsItem.styled';
 
 export default function ContactsItem({
   contact: { id, name, number },
@@ -8,12 +13,8 @@ export default function ContactsItem({
   return (
     <Contact>
       <ContactIcon />
-      <Box as="span" display="inline-block" minWidth={150} ml={2}>
-        {name}:{' '}
-      </Box>
-      <Box as="span" display="inline-block" minWidth={150} mr={2}>
-        {number}
-      </Box>
+      <ContactName>{name}: </ContactName>
+      <ContactNumber>{number}</ContactNumber>
       <DeleteBtn onClick={() => onDeleteContact(id)}>Delete</DeleteBtn>
     </Contact>
   );

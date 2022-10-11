@@ -3,18 +3,17 @@ import { nanoid } from 'nanoid';
 import ContactForm from './ContactForm';
 import Filter from './Filter';
 import ContactList from './ContactList';
-import Box from './Box';
+import Box from './reusableComponents/Box';
+import {
+  HeaderH1,
+  HeaderH2,
+} from './reusableComponents/Headers/Headers.styled';
 
 const LS_KEY = 'contacts';
 
 export class App extends Component {
   state = {
-    contacts: [
-      { id: 'id-1', name: 'Rosie Simpson', number: '459-12-56' },
-      { id: 'id-2', name: 'Hermione Kline', number: '443-89-12' },
-      { id: 'id-3', name: 'Eden Clements', number: '645-17-79' },
-      { id: 'id-4', name: 'Annie Copeland', number: '227-91-26' },
-    ],
+    contacts: [],
     filter: '',
   };
 
@@ -73,13 +72,9 @@ export class App extends Component {
 
     return (
       <Box m={4}>
-        <Box as="h1" mt={0} mb={4} color="accent">
-          Phonebook
-        </Box>
+        <HeaderH1>Phonebook</HeaderH1>
         <ContactForm addContact={this.handleAddContact} />
-        <Box as="h2" mt={5} mb={3} color="accent">
-          Contacts:
-        </Box>
+        <HeaderH2>Contacts:</HeaderH2>
         <Filter text={this.state.filter} onInput={this.handleFilterInput} />
         <ContactList
           contacts={filteredContacts}

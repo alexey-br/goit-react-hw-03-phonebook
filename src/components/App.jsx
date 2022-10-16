@@ -64,7 +64,6 @@ export class App extends Component {
 
   handleFilterInput = e => {
     this.setState({ filter: e.currentTarget.value });
-    this.filteredList = this.filterContacts(this.state.filter);
   };
 
   render() {

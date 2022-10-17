@@ -34,7 +34,12 @@ export class App extends Component {
   }
 
   handleAddContact = newContact => {
-    if (this.state.contacts.some(({ name }) => name === newContact.name)) {
+    const normalizedNewName = newContact.name.toLowerCase();
+    if (
+      this.state.contacts.some(
+        ({ name }) => name.toLowerCase() === normalizedNewName
+      )
+    ) {
       alert(`${newContact.name} is alredy in contacts`);
 
       return;
